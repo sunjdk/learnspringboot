@@ -72,8 +72,6 @@ springMVC 配置复杂，工作重复
 
 ### 需要先了解的核心概念
 
-
-
 springBoot 不是要替换传统spring
 
 自动装配
@@ -87,8 +85,6 @@ springBoot 不是要替换传统spring
 springData
 
 JPA*	JDBC*	CouchDB	Cassandra	Solr	MongoDB	Neo4j	Redis
-
-
 
 spring boot 2.x相对1.x重要的变化
 
@@ -104,23 +100,120 @@ spring boot 2.x相对1.x重要的变化
 
 ·响应式编程WebFlux,重要的变革，后续章节会详细展示
 
-### springboot2 需要先了解的核心概念 
+什么是 Spring Boot Starter
+
+一组被依赖的第三方类库的集合
+
+什么是 Spring Boot Starter Parent 
+
+对引入的第三方依赖的版本号统一在父项目的定义中统一进行版本定义
+
+嵌入式 Web 容器
+
+嵌入式容器中默认引入了tomcat Web 容器
+
+可以直接用命令执行jar ：java -jar .\boot-lanuch-1.0.jar
+
+### 提高开发效率插件lombok
+
+使用lombok插件的好处
+
+如何安装lombok插件
+
+使用lombok提高开发效率
+
+idea-file-setting-plugins 中搜索lombok
+
+install ，重启
+
+使用在文件中写注解 
+
+@Data 自动生成get\set 方法
+
+@Slf4 自动生成日志
+
+@Builder 链式注入初始化对象属性
+
+@AllArgsConstructor 全参构造方法
+
+@NoArgsConstructor 无参构造方法
+
+### IDEA环境下代码热部署热加载
+
+方法一∶使用Jrebel插件
+
+安装插件，使用插件启动按钮进行部署，付费插件，兼容性不好，弃用
+
+方法二:使用devtools
+
+pom.xml中
+
+```xml
+<dependency>
+
+	<groupId>org.springframework.boot</groupId>
+
+	<artifactId>spring-boot-devtools</artifactId>
+
+	<optional>true</optional>
+
+</dependency>
+
+
+```
+
+ctrl+f9 自动编译
+
+安装谷歌浏览器插件  live reload 代码改变自动刷新浏览器
+
+### 开发常用IDEA工具插件
+
+Codota	代码自动补全 代码片搜索
+
+Auto filling Java call arguments	自动填充函数参数
+
+GsonFormat	根据格式json字符串自动生成对应的java代码
+
+Rainbow Brackets	彩虹括号
+
+Maven Helper	依赖助理
+
+### RESTful风格API与HTTP协议 
+
+APl (Application Programming Interface).名思义:是一组编程接接口规范，客户端与服条端通过请求响应进行数据通信
+
+REST(Representational State Transfer）表述性状态传递，决定了接口的形式与规范
+
+RESTful是基于http方法的API设计风格，而不是一种新的技术.
+
+看Url就知道要什么资源
+
+看http method就知道针对资源干什么
+
+看http status code就知道结果如何
 
 
 
+RESTful是面向资源的（名词)
 
+用HTTP方法体现对资源的操作
 
+用HTTP状态码表述结果
 
+Get方法和查询参数不应该改变数据
+改变数据的事交给POST、PUT、 DELETE
 
+复杂资源关系的表达
 
+GET /cars/711/drivers/返回使用过编号711汽车的所有司机
 
+GET/cars/711/drivers/4返回使用过编号711汽车的4号司机
 
+资源过滤、排序、选择和分页的表述
 
+高级用法:HATEOAS 关联api 
 
+版本化你的API
+强制性增加APl版本声明，不要发布无版本的APl。如:/api/V1/blog
 
-
-
-
-
-
-
+### 常用注解开发RESTful接口上 
