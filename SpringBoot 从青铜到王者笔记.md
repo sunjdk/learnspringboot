@@ -1,5 +1,20 @@
 ### 课程导读
 
+课程来源：
+https://www.youtube.com/watch?v=pi0Xe3OQBl4&list=PLPeEs8-8l_L8VvpXKLOscgyDOaXKaPnVf&index=23
+
+课程笔记：
+
+https://www.kancloud.cn/hanxt/springcloud/1718845
+
+相关资源：
+
+http://www.zimug.com/ 
+
+spring 官网：
+
+https://spring.io/projects/spring-data
+
 Spring Boot 知识结构图
 
 前端层面
